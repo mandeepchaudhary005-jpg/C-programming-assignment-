@@ -1,1 +1,155 @@
+ 1. What do you mean by arrays give one example of array and how you can declared an array?
+Ans- 
+    #include <stdio.h>
+    int main() {
+    int numbers[5] = {10, 20, 30, 40, 50}; 
+    
+    printf("Elements of array:\n");
+    for(int i = 0; i < 5; i++) {
+        printf("%d ", numbers[i]);
+    }
+    return 0;
+}
+2. What do you mean by functions? Write the types of functions and give one example in code of each type.
+Ans- Type 1:
+            Library Function Example (printf)
 
+#include <stdio.h> // Header file for the printf function
+
+int main() {
+    // 'printf' is a standard library function
+    printf("Hello, World!\n"); 
+    return 0;
+}
+
+Type 2: 
+      User-Defined Function Example
+
+       #include <stdio.h>
+
+// Function Declaration (Prototype)
+int add(int a, int b); 
+
+int main() {
+    int result;
+    // Function Call
+    result = add(10, 5); 
+    printf("The sum is: %d\n", result);
+    return 0;
+}
+
+// Function Definition
+int add(int a, int b) {
+    int sum = a + b;
+    return sum; // Returns the result
+}
+
+3. What do you mean by Pointers ? Write a code how you can initialise the pointer. 
+Ans -
+     #include <stdio.h>
+
+     int main() {
+    int value = 42;  // 1. Declare and initialize an integer variable
+
+    // 2. Declare a pointer variable:
+    //    The '*' indicates it's a pointer. 'int*' means it points to an integer.
+    int *ptr;        
+
+    // 3. Initialize the pointer:
+    //    The '&' (address-of operator) gets the memory address of 'value' 
+    //    and assigns it to 'ptr'.
+    ptr = &value;    
+
+    printf("Value of 'value': %d\n", value);       
+    printf("Address of 'value' (stored in ptr): %p\n", ptr);
+    // Use '*' to access the value at the address stored in 'ptr'
+    printf("Value at address (using *ptr): %d\n", *ptr); 
+
+    return 0;
+}
+
+4. What are the types of array? Write in a code 1D & 2D included.
+Ans-
+     #include <stdio.h>
+
+     int main() {
+    // 1. One-Dimensional (1D) Array
+    printf("--- 1D Array Example ---\n");
+    
+    // Declaration and Initialization
+    int numbers[4] = {10, 20, 30, 40}; 
+    
+    // Accessing and printing the elements
+    for (int i = 0; i < 4; i++) {
+        printf("numbers[%d] = %d\n", i, numbers[i]);
+    }
+    
+    printf("\n--- 2D Array Example ---\n");
+    
+    // 2. Two-Dimensional (2D) Array (3 rows, 2 columns)
+    // Conceptually a table:
+    // 1  2
+    // 3  4
+    // 5  6
+    int matrix[3][2] = {
+        {1, 2},
+        {3, 4},
+        {5, 6}
+    };
+    
+    // Accessing and printing the elements (nested loops)
+    for (int i = 0; i < 3; i++) { // Loop for rows
+        for (int j = 0; j < 2; j++) { // Loop for columns
+            printf("matrix[%d][%d] = %d ", i, j, matrix[i][j]);
+        }
+        printf("\n"); // Newline after each row
+    }
+
+    return 0;
+}
+
+5. Explain the types of Operators in code.
+Ans-
+     #include <stdio.h>
+
+int main() {
+    int a = 10, b = 5, result;
+
+    printf("a = %d, b = %d\n\n", a, b);
+
+    // 1. Arithmetic Operators: For mathematical calculations
+    printf("--- 1. Arithmetic Operators ---\n");
+    result = a + b; // Addition
+    printf("a + b = %d\n", result); 
+    result = a * b; // Multiplication
+    printf("a * b = %d\n", result);
+    result = a % b; // Modulo (Remainder)
+    printf("a %% b = %d\n", result); // Output: 0
+
+    // 2. Relational Operators: To compare two operands (result is 0 or 1)
+    printf("\n--- 2. Relational Operators ---\n");
+    printf("a > b (10 > 5): %d\n", a > b);     // Output: 1 (True)
+    printf("a == b (10 == 5): %d\n", a == b);   // Output: 0 (False)
+
+    // 3. Logical Operators: To combine or negate logical conditions
+    printf("\n--- 3. Logical Operators ---\n");
+    // Logical AND (&&): True only if BOTH conditions are true
+    printf("(a > 0 && b > 0): %d\n", (a > 0 && b > 0)); // Output: 1 (True)
+    // Logical OR (||): True if at least ONE condition is true
+    printf("(a < 0 || b > 0): %d\n", (a < 0 || b > 0)); // Output: 1 (True)
+
+    // 4. Assignment Operators: To assign a value to a variable
+    printf("\n--- 4. Assignment Operators ---\n");
+    int c = 10;   // Simple assignment (=)
+    c += 5;       // Compound assignment (c = c + 5)
+    printf("After c += 5, c = %d\n", c); // Output: 15
+
+    // 5. Unary/Increment/Decrement Operators: Operate on a single operand
+    printf("\n--- 5. Increment/Decrement Operators ---\n");
+    a++;  // Post-increment (a = 10, then uses a, then a becomes 11)
+    printf("a after a++: %d\n", a); // Output: 11
+    --b;  // Pre-decrement (b = 5, then b becomes 4, then uses b)
+    printf("b after --b: %d\n", b); // Output: 4
+
+    return 0;
+}
