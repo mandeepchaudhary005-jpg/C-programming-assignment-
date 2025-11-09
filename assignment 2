@@ -1,0 +1,84 @@
+Q1. What do you mean by Structures?
+Ans. Input 
+#include <stdio.h>
+// Define structure
+struct Student {
+    int roll;
+    char name[20];
+    float marks;
+};
+int main() {
+    struct Student s1 = {101, "mandeep", 89.5};
+    printf("Roll No: %d\n", s1.roll);
+    printf("Name: %s\n", s1.name);
+    printf("Marks: %.2f\n", s1.marks);
+    return 0;
+
+}
+Output
+Roll No: 101
+Name: mandeep
+Marks: 89.50
+
+
+Q2. What do you mean by Array and Pointers Array?
+Ans. Input
+#include <stdio.h>
+int main() {
+    int arr[3] = {10, 20, 30};  // Normal array
+    int *ptr[3];                // Array of pointers
+    // Store address of each element
+    for (int i = 0; i < 3; i++) {
+        ptr[i] = &arr[i];
+    }
+    // Print values using pointer array
+    for (int i = 0; i < 3; i++) {
+        printf("Value of arr[%d] = %d\n", i, *ptr[i]);
+    }
+    return 0;
+
+}
+output
+Value of arr[0] = 10
+Value of arr[1] = 20
+Value of arr[2] = 30
+
+
+3. COMPARE TWO STRUCTURE VARIABLES:
+       Direct comparison not possible using == or !=
+       So, we compare each member individually.
+    */
+    printf("Q3 Output:\n");
+    struct Student a = {1, "Nirbhay", 89.5};
+    struct Student b = {1, "Nirbhay", 89.5};
+
+    if (a.rollno == b.rollno && strcmp(a.name, b.name) == 0 && a.marks == b.marks)
+        printf("Structures are Equal\n");
+    else
+        printf("Structures are Not Equal\n");
+    // Output:
+    // Structures are Equal
+    printf("\n");
+
+
+    /*
+
+ 
+    4. ARITHMETIC OPERATIONS ON STRUCTURES:
+       We can perform arithmetic on numeric members of structures.
+
+    */
+    printf("Q4 Output:\n");
+    struct Student st1 = {1, "Ravi", 80.0};
+    struct Student st2 = {2, "Karan", 90.0};
+    float total = st1.marks + st2.marks;
+    float avg = total / 2;
+
+    printf("Total Marks = %.1f\n", total);
+    printf("Average Marks = %.1f\n", avg);
+    // Output:
+    // Total Marks = 170.0
+    // Average Marks = 85.0
+
+    return 0;
+}
